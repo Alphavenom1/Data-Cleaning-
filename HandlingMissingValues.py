@@ -1,3 +1,15 @@
+
+# modules we'll use
+import pandas as pd
+import numpy as np
+
+# read in all our data
+sf_permits = pd.read_csv("../input/building-permit-applications-data/Building_Permits.csv")
+
+# set seed for reproducibility
+np.random.seed(0) 
+
+
 # print the first five rows of the sf_permits DataFrame.
 print(sf_permits.head())
 
