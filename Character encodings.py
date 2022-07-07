@@ -1,3 +1,13 @@
+# modules we'll use
+import pandas as pd
+import numpy as np
+
+# helpful character encoding module
+import chardet
+
+# set seed for reproducibility
+np.random.seed(0)
+
 #create a variable new_entry that changes the encoding from "big5-tw" to "utf-8". new_entry should have the bytes datatype.
 new_entry = (sample_entry.decode("big5-tw")).encode('utf-8', errors="replace")
 
