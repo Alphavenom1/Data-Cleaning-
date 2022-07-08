@@ -13,8 +13,11 @@ new_entry = (sample_entry.decode("big5-tw")).encode('utf-8', errors="replace")
 
 #Use the code cell below to read in this file at path "../input/fatal-police-shootings-in-the-us/PoliceKillingsUS.csv".
 with open("../input/fatal-police-shootings-in-the-us/put isPoliceKillingsUS.csv", 'rb') as rawdata:
-    result = chardet.detect(rawdata.read(10000))
+    result = chardet.detect(rawdata.read(100000))
 print(result)
-#output is : {'encoding': 'ascii', 'confidence': 1.0, 'language': ''}
-police_killings=pd.read_csv("../input/fatal-police-shootings-in-the-us/PoliceKillingsUS.csv", encoding='ascii')
+#output is : {'encoding': 'Windows-1252', 'confidence':      o.73, 'language': ''}
+police_killings=pd.read_csv("../input/fatal-police-shootings-in-the-us/PoliceKillingsUS.csv", encoding='Windows-1252')
 police_killings.head()
+
+#Save a version of the police killings dataset to CSV with UTF-8 encoding. 
+police_killings.to_csv("/kaggle/working/police_killings-utf8.csv")
